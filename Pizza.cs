@@ -6,14 +6,14 @@ namespace PizzaApp;
 public class Pizza
 {
     public int Id {get;private set;}
-    public string Name {get;private set;}
+    public string Nev {get;private set;}
     public int Meret {get;private set;}
     public int Ar {get;private set;}
 
-    public Pizza (int id, string name, int meret, int ar)
+    public Pizza (int id, string nev, int meret, int ar)
     {
         this.Id = id;
-        this.Name = name;
+        this.Nev = nev;
         this.Meret = meret;
         this.Ar = ar;
     }
