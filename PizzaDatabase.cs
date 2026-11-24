@@ -39,6 +39,26 @@ public class PizzaDatabase
                         }
                     }
                 }
+
+                string query2 = "SELECT * FROM cim";
+                using (MySqlCommand command = new(query2, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["id"]);
+                            Cim cim = new(
+                                id,
+                                Convert.ToString(reader["nev"]) ?? "",
+                                Convert.ToString(reader["utca"]) ?? "",
+                                Convert.ToString(reader["hsz"]) ?? ""
+                            );
+                            this.cimek[id] = cim;
+                        }
+                    }
+                }
+
             }
         }
         catch (Exception)
