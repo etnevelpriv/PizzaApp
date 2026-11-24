@@ -35,6 +35,7 @@ public class PizzaDatabase
                                 Convert.ToInt32(reader["meret"]),
                                 Convert.ToInt32(reader["ar"])
                             );
+                            Console.WriteLine(pizza);
                             this.pizzak[id] = pizza;
                         }
                     }
@@ -54,15 +55,39 @@ public class PizzaDatabase
                                 Convert.ToString(reader["utca"]) ?? "",
                                 Convert.ToString(reader["hsz"]) ?? ""
                             );
+                            Console.WriteLine(cim);
                             this.cimek[id] = cim;
                         }
                     }
                 }
 
+                string query3 = "SELECT * FROM rendeles";
+                using (MySqlCommand command = new(query3, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["id"]);
+                            Rendeles rendeles = new(
+                                id,
+                                pizzak[Convert.ToInt32(reader["pizzaid"])],
+                                Convert.ToInt32(reader["darab"]),
+                                cimek[Convert.ToInt32(reader["cimid"])],
+                                reader.GetTimeSpan("szallitas")
+                            );
+                            Console.WriteLine(rendeles);
+                            this.lista.Add(rendeles);
+                        }
+                    }
+                }
+
+
             }
         }
         catch (Exception)
         {
+            
         }
     }
 }

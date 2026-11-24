@@ -1,0 +1,6 @@
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.csproj.AssemblyReference.cache
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.AssemblyInfoInputs.cache
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.AssemblyInfo.cs
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.csproj.CoreCompileInputs.cache
+/home/etnevel/Suli/Desktop_App/PizzaApp/obj/Debug/net10.0/PizzaApp.sourcelink.json

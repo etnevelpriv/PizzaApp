@@ -1,1 +1,8 @@
-﻿Console.WriteLine("Hello, World!");
+﻿namespace PizzaApp;
+internal class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("teszt");
+    }
+}
