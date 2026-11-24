@@ -18,4 +18,9 @@ public class Rendeles
         this.Cim = cim;
         this.Ido = ido;
     }
+
+    public string ToString()
+    {
+        return($"id:{this.Id}, darab:{this.Darab}, ido:{this.Ido}, pizza.ar:${this.Pizza.Ar}, pizza.nev:{this.Pizza.Nev}, pizza.meret:{this.Pizza.Meret}, pizza.id:{this.Pizza.Id}, cim.nev:{this.Cim.Nev}, cim.id:{this.Cim.Id}, cim.utca:{this.Cim.Utca}, cim.hsz:{this.Cim.Hsz}");
+    }
 }

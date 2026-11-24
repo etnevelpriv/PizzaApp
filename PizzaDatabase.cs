@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using MySql.Data.MySqlClient;
 
@@ -15,6 +16,9 @@ public class PizzaDatabase
     {
         this.connectionString = "server=127.0.0.1;database=Pizzafutár;user=root;pwd=root;port=23456";
 
+    }
+    public List<Rendeles> UploadData()
+    {
         try
         {
             using (MySqlConnection connection = new(this.connectionString))
@@ -35,7 +39,6 @@ public class PizzaDatabase
                                 Convert.ToInt32(reader["meret"]),
                                 Convert.ToInt32(reader["ar"])
                             );
-                            Console.WriteLine(pizza);
                             this.pizzak[id] = pizza;
                         }
                     }
@@ -55,7 +58,6 @@ public class PizzaDatabase
                                 Convert.ToString(reader["utca"]) ?? "",
                                 Convert.ToString(reader["hsz"]) ?? ""
                             );
-                            Console.WriteLine(cim);
                             this.cimek[id] = cim;
                         }
                     }
@@ -76,18 +78,17 @@ public class PizzaDatabase
                                 cimek[Convert.ToInt32(reader["cimid"])],
                                 reader.GetTimeSpan("szallitas")
                             );
-                            Console.WriteLine(rendeles);
                             this.lista.Add(rendeles);
                         }
                     }
                 }
-
+                return this.lista;
 
             }
         }
         catch (Exception)
         {
-            
+            throw new Exception();
         }
     }
 }
